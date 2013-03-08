@@ -4,7 +4,12 @@
 import os
 import re
 
-from distribute_setup import use_setuptools; use_setuptools()
+try:
+    import setuptools
+except ImportError:
+    from distribute_setup import use_setuptools
+    use_setuptools()
+
 from setuptools import setup, find_packages
 
 
@@ -17,10 +22,7 @@ def read_from(filename):
     finally:
         fp.close()
 
-def get_version():
-    data = read_from(rel_file('src', 'cssmin.py'))
-    return re.search(r"__version__ = '([^']+)'", data).group(1)
-
+__version__ = '0.1.4'
 
 setup(
     name             = 'cssmin',
