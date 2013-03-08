@@ -26,7 +26,7 @@ __version__ = '0.1.4'
 
 setup(
     name             = 'cssmin',
-    version          = get_version(),
+    version          = __version__,
     author           = "Zachary Voase",
     author_email     = "zacharyvoase@me.com",
     url              = 'http://github.com/zacharyvoase/cssmin',
