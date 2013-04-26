@@ -204,6 +204,10 @@ def cssmin(css, wrap=None):
 def main():
     import optparse
     import sys
+    import codecs
+
+    sys.stdin = codecs.getreader('utf8')(sys.stdin)
+    sys.stdout = codecs.getwriter('utf8')(sys.stdout)
     
     p = optparse.OptionParser(
         prog="cssmin", version=__version__,
