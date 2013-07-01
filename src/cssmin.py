@@ -6,7 +6,7 @@
 import re
 
 
-__version__ = '0.1.4'
+__version__ = '0.1.5'
 
 
 def remove_comments(css):
@@ -206,8 +206,8 @@ def main():
     import sys
     import codecs
 
-    sys.stdin = codecs.getreader('utf8')(sys.stdin)
-    sys.stdout = codecs.getwriter('utf8')(sys.stdout)
+    sys.stdin = codecs.getreader('utf8')(sys.__stdin__)
+    sys.stdout = codecs.getwriter('utf8')(sys.__stdout__)
     
     p = optparse.OptionParser(
         prog="cssmin", version=__version__,
